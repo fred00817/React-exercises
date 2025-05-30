@@ -1,24 +1,29 @@
-import React, { useState } from 'react'
-
-
+import React, { useState } from "react";
 
 function Formo() {
-const [form, setForm ] = useState('')  
- 
-    const handleChange = (event) => {
-        const updatedForm = event.target.value
-        setForm(updatedForm)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-    }
+  const handleChange = (event) => {
+    const updatedName = event.target.value;
+    setName(updatedName);
 
-    return (
-      <form>
-        <label> FORM : </label>
-          <input  onChange={handleChange} />
-            <h1> hello! {form}</h1>
-      </form>
-    );
+    const handleChang = (event) => {
+      const updatedEmail = event.target.value;
+      setEmail(updatedEmail);
+    };
+  };
 
+  return (
+    <form>
+      <label> NAME : </label>
+      <input onChange={handleChange} />
+      <h1> hello!, {name}</h1>
+
+      <label>Email :</label>
+ <input value={email} onChange={handleChang} />
+    </form>
+  );
 }
 
 export default Formo;
